@@ -1,0 +1,26 @@
+{
+  "name": "dizartnft",
+  "version": "1.0.0",
+  "description": "Dizart: Blockchain-based platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yunocrown/nftproject.git"
+  },
+  "keywords": [
+    "nft",
+    "digital",
+    "art",
+    "blockchain-platform",
+    "metamask"
+  ],
+  "author": "team dizart",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yunocrown/nftproject/issues"
+  },
+  "homepage": "https://github.com/yunocrown/nftproject#readme"
+}
