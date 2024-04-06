@@ -4,7 +4,8 @@
   "description": "Dizart: Blockchain-based platform",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd client && npm install"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,10 @@
   "bugs": {
     "url": "https://github.com/yunocrown/nftproject/issues"
   },
-  "homepage": "https://github.com/yunocrown/nftproject#readme"
+  "homepage": "https://github.com/yunocrown/nftproject#readme",
+  "dependencies": {
+    "@web3uikit/core": "^1.1.5",
+    "concurrently": "^8.2.2",
+    "web3uikit": "^1.0.4"
+  }
 }
