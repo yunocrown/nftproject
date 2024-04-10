@@ -1,7 +1,11 @@
 import React, { useState, useContext } from "react";
 import classes from "./EditProfile.module.css";
-import { Card, InputField, CustomButton, ProductCard } from "../../UI";
 import { sellerAuthContext } from "../../../Contexts";
+
+import CustomButton from "../../UI/CustomButton/CustomButton.jsx";
+import InputField from "../../UI/InputField/InputField.jsx";
+import Card from "../../UI/Card/Card.jsx";
+import ProductCard from "../../UI/ProductCard/ProductCard.jsx";
 
 const EditProfile = () => {
   const { updateImage, updateProfile } = useContext(sellerAuthContext);

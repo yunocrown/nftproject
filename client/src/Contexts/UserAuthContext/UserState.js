@@ -42,7 +42,7 @@ const UserAuthState = (props) => {
         },
       };
       try {
-        const res = await axios.get("/api/user/profile", config);
+        const res = await axios.get("http://localhost:8080/api/user/profile", config);
         dispatch({ type: USER_LOADED, payload: res.data });
       } catch (error) {
         dispatch({ type: AUTH_ERROR });
@@ -61,7 +61,7 @@ const UserAuthState = (props) => {
       setAuthUserToken(localStorage.userToken);
     }
     try {
-      const res = await axios.get("/api/user/profile", config);
+      const res = await axios.get("http://localhost:8080/api/user/profile", config);
       dispatch({ type: USER_LOADED, payload: res.data });
     } catch (error) {
       dispatch({ type: AUTH_ERROR });
@@ -76,7 +76,7 @@ const UserAuthState = (props) => {
     };
 
     try {
-      const res = await axios.post("/api/user/signup", userData, config);
+      const res = await axios.post("http://localhost:8080/api/user/signup", userData, config);
       dispatch({ type: REGISTER_SUCCESS, payload: res.data });
       // loadUser();
     } catch (error) {
@@ -93,7 +93,7 @@ const UserAuthState = (props) => {
     };
 
     try {
-      const res = await axios.post("/api/user/login", userData, config);
+      const res = await axios.post("http://localhost:8080/api/user/login", userData, config);
       dispatch({ type: LOGIN_SUCCESS, payload: res.data });
       // loadUser();
     } catch (error) {
@@ -136,7 +136,7 @@ const UserAuthState = (props) => {
     };
 
     try {
-      const res = await axios.post(`/api/product/${id}`, config);
+      const res = await axios.post(`http://localhost:8080/api/product/${id}`, config);
       dispatch({ type: BUY_PRODUCT, payload: res.data });
       // loadUser();
       console.log(res);
@@ -155,7 +155,7 @@ const UserAuthState = (props) => {
     };
 
     try {
-      const res = await axios.post(`/api/user/profile/image`, formData, config);
+      const res = await axios.post(`http://localhost:8080/api/user/profile/image`, formData, config);
       dispatch({ type: UPDATE_IMAGE });
     } catch (error) {
       // console.log(error);
@@ -171,7 +171,7 @@ const UserAuthState = (props) => {
       },
     };
     try {
-      const res = await axios.put(`/api/user/profile`, user, config);
+      const res = await axios.put(`http://localhost:8080/api/user/profile`, user, config);
       dispatch({ type: UPDATE_PROFILE, payload: res.data });
     } catch (error) {
       // console.log(error);

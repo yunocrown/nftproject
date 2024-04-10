@@ -1,13 +1,11 @@
 .navbar {
-    background: transparent;
+    background-color: transparent;
     height: 80px;
     display: flex;
     width: 100vw;
-    justify-content: space-between;
     align-items: center;
-    font-size: 1.5rem;
+    font-size: 20px;
     padding: 0px 60px;
-    padding-top: 40px;
     color: #fff;
 }
 
@@ -36,13 +34,12 @@
 
 .nav_menu {
     display: grid;
-    grid-template-columns: repeat(5, auto);
-    grid-gap: 10px;
+    grid-template-columns: repeat(6, auto);
+    grid-gap: 4rem;
     list-style: none;
-    text-align: center;
-    width: 70vw;
-    justify-content: end;
-    margin-right: 2rem;
+    width: 110vh;
+    background-color: #081e3a;
+    justify-content: center;
 }
 
 @media screen and (max-width: 960px) {

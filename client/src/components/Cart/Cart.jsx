@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Cart.module.css";
-import { ProductCard } from "../UI";
+
+import ProductCard from "../UI/ProductCard/ProductCard.jsx";
 
 import trial2 from "../../Assets/trial2.png";
 import trial3 from "../../Assets/trial3.png";

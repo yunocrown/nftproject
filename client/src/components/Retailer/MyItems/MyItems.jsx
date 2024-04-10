@@ -1,8 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import classes from "./MyItems.module.css";
-import { Card, ProductCard } from "../../UI";
-import trial1 from "../../../Assets/trial1.png";
-import { sellerAuthContext } from "../../../Contexts";
+import sellerAuthContext from "../../../Contexts/SellerAuthContext/sellerAuthContext.js";
+
+import Card from "../../UI/Card/Card.jsx"
+import ProductCard from "../../UI/ProductCard/ProductCard.jsx";
+
 
 const MyItems = () => {
 	const { getSellerProducts, products } = useContext(sellerAuthContext);

@@ -1,6 +1,9 @@
 import React from "react";
 import classes from "./ChangePass.module.css";
-import { Card, InputField, CustomButton } from "../../UI";
+
+import Card from "../../UI/Card/Card.jsx";
+import InputField from "../../UI/InputField/InputField.jsx";
+import CustomButton from "../../UI/CustomButton/CustomButton.jsx";
 
 const ChangePass = () => {
   return (

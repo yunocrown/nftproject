@@ -1,6 +1,5 @@
 import React, { useReducer } from "react";
 import axios from "axios";
-// import { API } from "../../config";
 import sellerAuthReducer from "./sellerAuthReducer";
 import sellerAuthContext from "./sellerAuthContext";
 import { setAuthSellerToken } from "../../utils/setAuthToken";
@@ -45,7 +44,7 @@ const SellerAuthState = (props) => {
 			};
 			try {
 				const res = await axios.get(
-					"http://localhost:8000/api/seller/profile",
+					"http://localhost:8080/api/seller/profile",
 					config,
 				);
 				dispatch({ type: USER_LOADED, payload: res.data });
@@ -68,7 +67,7 @@ const SellerAuthState = (props) => {
 		}
 		try {
 			const res = await axios.get(
-				"http://localhost:8000/api/seller/profile",
+				"http://localhost:8080/api/seller/profile",
 				config,
 			);
 			dispatch({ type: USER_LOADED, payload: res.data });
@@ -86,7 +85,7 @@ const SellerAuthState = (props) => {
 
 		try {
 			const res = await axios.post(
-				"http://localhost:8000/api/seller/signup",
+				"http://localhost:8080/api/seller/signup",
 				userData,
 				config,
 			);
@@ -107,7 +106,7 @@ const SellerAuthState = (props) => {
 
 		try {
 			const res = await axios.post(
-				"http://localhost:8000/api/seller/login",
+				"http://localhost:8080/api/seller/login",
 				userData,
 				config,
 			);
@@ -131,14 +130,14 @@ const SellerAuthState = (props) => {
 	const addProduct = async (formData) => {
 		const config = {
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type": "multipart/form-data",
 			},
 		};
 
 		try {
-			const res = await axios.post("/api/product", formData, config);
+			const res = await axios.post("http://localhost:8080/api/product/", formData, config);
 			// const res2 = await axios.put(
-			//   `http://localhost:8000/api/product/${sellerId}`,
+			//   `http://localhost:8080/api/product/${sellerId}`,
 			//   image,
 			//   config
 			// );
@@ -160,7 +159,7 @@ const SellerAuthState = (props) => {
 		const data = { image, seller };
 		try {
 			const res = await axios.put(
-				`http://localhost:8000/api/product/${id}`,
+				`http://localhost:8080/api/product/${id}`,
 				data,
 				config,
 			);
@@ -178,7 +177,7 @@ const SellerAuthState = (props) => {
 			},
 		};
 		try {
-			const res = await axios.get(`/api/product`, config);
+			const res = await axios.get(`http://localhost:8080/api/product/`, config);
 			dispatch({ type: GET_SELLER_PRODUCTS, payload: res.data.sellerProducts });
 		} catch (error) {
 			// console.log(error);
@@ -191,16 +190,17 @@ const SellerAuthState = (props) => {
 	const updateImage = async (formData) => {
 		const config = {
 			headers: {
-				"Content-Type": "application/json",
+				"Content-Type": "multipart/form-data",
 			},
 		};
 
 		try {
 			const res = await axios.put(
-				`/api/seller/profile/image`,
+				`http://localhost:8080/api/seller/profile/image`,
 				formData,
 				config,
 			);
+			console.log(res)
 			dispatch({ type: UPDATE_IMAGE });
 		} catch (error) {
 			// console.log(error);
@@ -216,7 +216,7 @@ const SellerAuthState = (props) => {
 			},
 		};
 		try {
-			const res = await axios.put(`/api/seller/profile`, user, config);
+			const res = await axios.put(`http://localhost:8080/api/seller/profile`, user, config);
 			dispatch({ type: UPDATE_PROFILE, payload: res.data });
 		} catch (error) {
 			// console.log(error);

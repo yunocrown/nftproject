@@ -1,7 +1,9 @@
 import React, { useContext } from "react";
-import { CustomButton, Modal } from "../../UI";
 import classes from "./LogoutModal.module.css";
 import { sellerAuthContext } from "../../../Contexts";
+
+import CustomButton from "../../UI/CustomButton/CustomButton.jsx";
+import Modal from "../../UI/Modal/Modal.jsx";
 
 const LogoutModal = (props) => {
   const { logoutSeller } = useContext(sellerAuthContext);

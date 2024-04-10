@@ -1,9 +1,8 @@
 import React, { useReducer } from "react";
 import axios from "axios";
-// import { API } from "../../config";
 import productReducer from "./productReducer";
 import productContext from "./productContext";
-// import { setAuthSellerToken } from "../../utils/setAuthToken";
+
 import {
 	GET_ALL_PRODUCTS,
 	GET_SINGLE_PRODUCT,
@@ -30,7 +29,7 @@ const ProductState = (props) => {
 
 		try {
 			const res = await axios.post(
-				`/api/product/${id}`,
+				`http://localhost:8080/api/product/${id}`,
 				{ tId: tokenId },
 				config,
 			);
@@ -51,7 +50,7 @@ const ProductState = (props) => {
 
 		try {
 			const res = await axios.put(
-				`/api/product/token/${id}`,
+				`http://localhost:8080/api/product/token/${id}`,
 				{ tId: tokenId, userId },
 				config,
 			);
@@ -71,7 +70,7 @@ const ProductState = (props) => {
 		};
 
 		try {
-			const res = await axios.get(`/api/product/${id}`, config);
+			const res = await axios.get(`http://localhost:8080/api/product/${id}`, config);
 			dispatch({ type: GET_SINGLE_PRODUCT, payload: res.data });
 			return res.data;
 		} catch (error) {
@@ -88,7 +87,7 @@ const ProductState = (props) => {
 		};
 		try {
 			const res = await axios.post(
-				`/api/product/purchase/${productId}`,
+				`http://localhost:8080/api/product/purchase/${productId}`,
 				{ walletAddress },
 				config,
 			);
@@ -106,7 +105,7 @@ const ProductState = (props) => {
 		};
 
 		try {
-			const res = await axios.get("/api/products", config);
+			const res = await axios.get("http://localhost:8080/api/products", config);
 			console.log(res);
 			dispatch({ type: GET_ALL_PRODUCTS, payload: res.data });
 		} catch (error) {
@@ -124,7 +123,7 @@ const ProductState = (props) => {
 
 		try {
 			const res = await axios.post(
-				"/api/products/category",
+				"http://localhost:8080/api/products/category",
 				{ category: name },
 				config,
 			);
@@ -144,7 +143,7 @@ const ProductState = (props) => {
 			},
 		};
 		try {
-			const res = await axios.get("/api/user/purchased", config);
+			const res = await axios.get("http://localhost:8080/api/user/purchased", config);
 
 			dispatch({
 				type: GET_PURCHASED_PRODUCTS,

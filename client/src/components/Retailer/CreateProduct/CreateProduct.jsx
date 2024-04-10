@@ -1,7 +1,11 @@
 import React, { useState, useContext } from "react";
-import { CustomButton, Card, ProductCard, InputField } from "../../UI";
 import classes from "./CreateProduct.module.css";
 import { sellerAuthContext } from "../../../Contexts";
+
+import CustomButton from "../../UI/CustomButton/CustomButton.jsx";
+import Card from "../../UI/Card/Card.jsx";
+import ProductCard from "../../UI/ProductCard/ProductCard.jsx";
+import InputField from "../../UI/InputField/InputField.jsx";
 
 const CreateProduct = () => {
   const { addProduct } = useContext(sellerAuthContext);
